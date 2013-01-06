@@ -64,6 +64,8 @@ function gmie_display_custom() {
 	}
 
 	else {
-		echo the_post_thumbnail( 'gmie-custom', array('class' => 'custom-image ' . esc_html( $image_align ) . '', 'alt'	=> esc_html( $image_alt ) ) );
+		if ( has_post_thumbnail() ) {
+			echo the_post_thumbnail( 'gmie-custom', array('class' => 'custom-image ' . esc_html( $image_align ) . '', 'alt'	=> esc_html( $image_alt ) ) );
+		}
 	}
 }
