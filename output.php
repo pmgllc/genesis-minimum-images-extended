@@ -12,15 +12,14 @@ function gmie_featured_image() {
 	elseif ( is_singular( array( 'post', 'page' ) ) ){
 	
 		gmie_image();
+	}
 	
-		elsif( has_post_thumbnail() ) {
+	elseif ( has_post_thumbnail() ) {
 			echo '<div id="featured-image">';
 			echo get_the_post_thumbnail($thumbnail->ID, 'header');
 			echo '</div>';
 		}
 	}
-	
-}
 
 function gmie_image() {
 	if( ! ( $image = genesis_get_custom_field( '_gmie_image' ) ) )
