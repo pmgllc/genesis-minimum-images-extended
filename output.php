@@ -13,7 +13,7 @@ function gmie_featured_image() {
 	
 		gmie_image();
 	
-		elsif( has_post_thumbnail() ) {
+		elseif( has_post_thumbnail() ) {
 			echo '<div id="featured-image">';
 			echo get_the_post_thumbnail($thumbnail->ID, 'header');
 			echo '</div>';
