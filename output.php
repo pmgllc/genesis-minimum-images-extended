@@ -9,13 +9,12 @@ function gmie_featured_image() {
 		echo '<div id="featured-image"><img src="'. get_stylesheet_directory_uri() . '/images/sample.jpg" /></div>';
 	}
 	
-	elseif ( is_singular( array( 'post', 'page' ) ) ){
+	elseif ( is_singular( array( 'post', 'page' ) ) ) {
 	
 		gmie_image();
-		
 	}
 	
-		elseif( has_post_thumbnail() ) {
+	elseif ( has_post_thumbnail() ) {
 			echo '<div id="featured-image">';
 			echo get_the_post_thumbnail($thumbnail->ID, 'header');
 			echo '</div>';
@@ -23,9 +22,13 @@ function gmie_featured_image() {
 	}
 
 function gmie_image() {
-	if( ! ( $image = genesis_get_custom_field( '_gmie_image' ) ) )
+	$image = genesis_get_custom_field( '_gmie_image' );
+	
+	if ( ! $image ) {
 		$image = has_post_thumbnail() ? get_the_post_thumbnail($thumbnail->ID, 'header') : '';
+	}
 		
-	if( $image ) 
-		printf('<div id="featured-image">%s</div>', $image );
+	else {
+		echo '<div id="featured-image"><img src="' . esc_html( $image ) . '" /></div>';
+	}
 }
