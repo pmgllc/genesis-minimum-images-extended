@@ -42,13 +42,27 @@ function gmie_display_featured() {
 
 /** Display the custom image if it exists */
 function gmie_display_custom() {
+		
+	// Check to see if alignment has been set
+	function image_align_check() {
+		$get_alignment = genesis_get_custom_field( '_gmie_align' );
+		
+		if ( $get_alignment ) {
+			return $get_alignment;
+		}
+		else {
+			return 'alignright';
+		}
+	}
+
+	$image_align = image_align_check();
 	$custom_image = genesis_get_custom_field( '_gmie_image' );
-	
+
 	if ( $custom_image ) {
-		echo '<img class="custom-image alignright" src="' . esc_html( $custom_image ) . '" />';
+		echo '<img class="custom-image ' . esc_html( $image_align ) . '" src="' . esc_html( $custom_image ) . '" />';
 	}
 
 	else {
-		echo the_post_thumbnail( 'gmie-custom', array('class' => 'custom-image alignright') );
+		echo the_post_thumbnail( 'gmie-custom', array('class' => 'custom-image ' . esc_html( $image_align ) . '') );
 	}
 }

@@ -32,9 +32,20 @@ function gmie_metaboxes( array $meta_boxes ) {
 		'fields'     => array(
 			array(
 				'name' => 'Image',
-				'desc' => 'Upload an image or enter an URL.',
+				'desc' => 'Upload an image or enter a URL.',
 				'id'   => $prefix . 'image',
 				'type' => 'file',
+			),
+			array(
+				'name'    => 'Alignment',
+				'id'      => $prefix . 'align',
+				'type'    => 'select',
+				'options' => array(
+					array( 'name' => 'Left', 'value' => 'alignleft', ),
+					// array( 'name' => 'Center', 'value' => 'aligncenter', ),
+					array( 'name' => 'Right', 'value' => 'alignright', ),
+					// array( 'name' => 'None', 'value' => 'alignnone', ),
+				),
 			),
 		),
 	);

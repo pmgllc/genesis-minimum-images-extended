@@ -35,6 +35,13 @@ table.cmb_metabox .cmb_upload_status .img_status .cmb_remove_file_button { text-
 .inner-sidebar table.cmb_metabox input[type=text], table.cmb_metabox textarea { width: 95%; }
 .inner-sidebar table.cmb_metabox .cmb_upload_status .img_status img { width: 90%; }
 
+/* Adjustments for gmie sidebar box */
+#gmie_metabox .cmb_metabox { display: block; overflow: hidden; }
+#gmie_metabox .cmb_metabox tr { display: block; }
+#gmie_metabox .cmb_metabox input.cmb_upload_file { margin-bottom: 5px; width: 75%; }
+#gmie_metabox .cmb_upload_status { left: -23%; position: relative; }
+#gmie_metabox .img_status img { max-width: 230px; }
+
 /**
  * Timepicker
  */
