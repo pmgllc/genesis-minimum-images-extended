@@ -6,6 +6,8 @@
   Version: 0.1.0
   Author: Nick_theGeek
   Author URI: http://DesignsByNicktheGeek.com
+  Author: Jesse Petersen
+  Author URI: http://www.petersenmediagroup.com
   Description: Adds a custom meta box for setting a seperate image in the mimumum child theme.. Requires Genesis 1.8+
  */
 
