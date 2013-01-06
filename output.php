@@ -57,12 +57,13 @@ function gmie_display_custom() {
 
 	$image_align = image_align_check();
 	$custom_image = genesis_get_custom_field( '_gmie_image' );
+	$image_alt = get_the_title();
 
 	if ( $custom_image ) {
-		echo '<img class="custom-image ' . esc_html( $image_align ) . '" src="' . esc_html( $custom_image ) . '" alt="' . get_the_title() . '" />';
+		echo '<img class="custom-image ' . esc_html( $image_align ) . '" src="' . esc_html( $custom_image ) . '" alt="' . esc_html( $image_alt ) . '" />';
 	}
 
 	else {
-		echo the_post_thumbnail( 'gmie-custom', array('class' => 'custom-image ' . esc_html( $image_align ) . '', 'alt'	=> get_the_title() ) );
+		echo the_post_thumbnail( 'gmie-custom', array('class' => 'custom-image ' . esc_html( $image_align ) . '', 'alt'	=> esc_html( $image_alt ) ) );
 	}
 }
