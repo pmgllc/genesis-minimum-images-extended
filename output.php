@@ -12,6 +12,8 @@ function gmie_featured_image() {
 	elseif ( is_singular( array( 'post', 'page' ) ) ){
 	
 		gmie_image();
+		
+	}
 	
 		elseif( has_post_thumbnail() ) {
 			echo '<div id="featured-image">';
