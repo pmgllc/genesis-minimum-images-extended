@@ -8,6 +8,8 @@
  * @link     https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress
  */
 
+add_image_size( 'gmie-custom', 300, 200, true ); //(cropped)
+
 add_filter( 'cmb_meta_boxes', 'gmie_metaboxes' );
 /**
  * Define the metabox and field configurations.
@@ -22,10 +24,10 @@ function gmie_metaboxes( array $meta_boxes ) {
 
 	$meta_boxes[] = array(
 		'id'         => 'gmie_metabox',
-		'title'      => 'Minimum Feature Image',
+		'title'      => 'Custom Image',
 		'pages'      => array( 'page', 'post' ), // Post type
 		'context'    => 'side',
-		'priority'   => 'high',
+		'priority'   => 'default',
 		'show_names' => true, // Show field names on the left
 		'fields'     => array(
 			array(
