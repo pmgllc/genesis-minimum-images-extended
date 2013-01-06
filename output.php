@@ -59,10 +59,10 @@ function gmie_display_custom() {
 	$custom_image = genesis_get_custom_field( '_gmie_image' );
 
 	if ( $custom_image ) {
-		echo '<img class="custom-image ' . esc_html( $image_align ) . '" src="' . esc_html( $custom_image ) . '" />';
+		echo '<img class="custom-image ' . esc_html( $image_align ) . '" src="' . esc_html( $custom_image ) . '" alt="' . get_the_title() . '" />';
 	}
 
 	else {
-		echo the_post_thumbnail( 'gmie-custom', array('class' => 'custom-image ' . esc_html( $image_align ) . '') );
+		echo the_post_thumbnail( 'gmie-custom', array('class' => 'custom-image ' . esc_html( $image_align ) . '', 'alt'	=> get_the_title() ) );
 	}
 }
