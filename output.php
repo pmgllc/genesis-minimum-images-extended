@@ -19,8 +19,6 @@ function gmie_featured_image() {
 			echo '</div>';
 		}
 	}
-	
-}
 
 function gmie_image() {
 	if( ! ( $image = genesis_get_custom_field( '_gmie_image' ) ) )
