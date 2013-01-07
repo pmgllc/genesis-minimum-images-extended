@@ -8,7 +8,7 @@
  * @link     https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress
  */
 
-add_image_size( 'gmie-custom', 300, 200, true ); //(cropped)
+add_image_size( 'gmie-banner', 300, 200, true ); //(cropped)
 
 add_filter( 'cmb_meta_boxes', 'gmie_metaboxes' );
 /**
@@ -24,30 +24,17 @@ function gmie_metaboxes( array $meta_boxes ) {
 
 	$meta_boxes[] = array(
 		'id'         => 'gmie_metabox',
-		'title'      => 'Custom Image',
+		'title'      => 'Banner Image',
 		'pages'      => array( 'page', 'post' ), // Post type
 		'context'    => 'side',
 		'priority'   => 'default',
 		'show_names' => true, // Show field names on the left
 		'fields'     => array(
-			array(
 				'name' => 'Image',
 				'desc' => 'Upload an image or enter a URL.',
 				'id'   => $prefix . 'image',
 				'type' => 'file',
-			),
-			array(
-				'name'    => 'Alignment',
-				'id'      => $prefix . 'align',
-				'type'    => 'select',
-				'options' => array(
-					array( 'name' => 'Left', 'value' => 'alignleft', ),
-					// array( 'name' => 'Center', 'value' => 'aligncenter', ),
-					array( 'name' => 'Right', 'value' => 'alignright', ),
-					// array( 'name' => 'None', 'value' => 'alignnone', ),
 				),
-			),
-		),
 	);
 
 	// Add other metaboxes as needed
