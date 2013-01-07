@@ -11,8 +11,7 @@ function load_gmie_featured_image() {
 	}
 
 	/** Add the new featured & custom image sections */
-	add_action( 'genesis_after_header', 'gmie_featured_image' );
-	add_action( 'genesis_post_content', 'gmie_custom_image', 5 );
+	add_action( 'genesis_after_header', 'gmie_banner_image' );
 }
 
 /** Include the featured image */
