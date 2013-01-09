@@ -34,7 +34,8 @@ function gmie_metaboxes( array $meta_boxes ) {
 				'desc' => 'Upload an image or enter a URL.',
 				'id'   => $prefix . 'image',
 				'type' => 'file',
-				);
+				)
+	);
 
 	// Add other metaboxes as needed
 
