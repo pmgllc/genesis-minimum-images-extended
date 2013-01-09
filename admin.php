@@ -30,11 +30,13 @@ function gmie_metaboxes( array $meta_boxes ) {
 		'priority'   => 'default',
 		'show_names' => true, // Show field names on the left
 		'fields'     => array(
-				'name' => 'Image',
-				'desc' => 'Upload an image or enter a URL.',
-				'id'   => $prefix . 'image',
-				'type' => 'file',
-				)
+				array(
+					'name' => 'Image',
+					'desc' => 'Upload an image or enter a URL.',
+					'id'   => $prefix . 'image',
+					'type' => 'file',
+					),
+		),
 	);
 
 	// Add other metaboxes as needed
