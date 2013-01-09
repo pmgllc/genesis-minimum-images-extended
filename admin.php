@@ -8,7 +8,7 @@
  * @link     https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress
  */
 
-add_image_size( 'gmie-banner', 300, 200, true ); //(cropped)
+//add_image_size( 'gmie-banner', 300, 200, true ); //(cropped)
 
 add_filter( 'cmb_meta_boxes', 'gmie_metaboxes' );
 /**
