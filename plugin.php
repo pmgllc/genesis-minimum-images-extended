@@ -45,7 +45,7 @@ function gmie_activation_check() {
 		wp_die( sprintf( __( 'Sorry, you can\'t activate unless you have installed %1$sGenesis%2$s', 'gmie' ), '<a href="http://designsbynickthegeek.com/go/genesis">', '</a>' ) );
 	}
 
-	$version = gmie_truncate( $theme_info['Version'], 3 );
+	$version = wp_html_excerpt( $theme_info['Version'], 3 );
 
 	if ( version_compare( $version, $latest, '<' ) ) {
 		deactivate_plugins( plugin_basename( __FILE__ ) ); // Deactivate ourself
@@ -53,29 +53,6 @@ function gmie_activation_check() {
 	}
 }
 
-/**
- *
- * Used to cutoff a string to a set length if it exceeds the specified length
- *
- * @author Nick Croft
- * @since 0.1
- * @version 0.2
- * @param string $str Any string that might need to be shortened
- * @param string $length Any whole integer
- * @return string
- */
-function gmie_truncate( $str, $length=10 ) {
-
-	if ( strlen( $str ) > $length ) {
-		return substr( $str, 0, $length );
-	} 
-
-	else {
-		$res = $str;
-	}
-
-	return $res;
-}
 
 add_action( 'genesis_init', 'gmie_init', 15 );
 
