@@ -23,7 +23,7 @@ function gmie_banner_image() {
 	elseif ( is_singular( array( 'post', 'page' ) ) ) {
 	$custom_image = genesis_get_custom_field( '_gmie_image' );
 		if ( $custom_image ) {
-		echo '<img class="custom-image " src="' . esc_html( $custom_image ) . '" alt="' . esc_html( $image_alt ) . '" />';
+		echo '<img class="featured-image" src="' . esc_html( $custom_image ) . '" alt="' . esc_html( $image_alt ) . '" />';
 		}
 	}
 }
