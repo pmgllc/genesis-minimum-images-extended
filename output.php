@@ -22,12 +22,9 @@ function gmie_banner_image() {
 	
 	elseif ( is_singular( array( 'post', 'page' ) ) ) {
 	$custom_image_id = genesis_get_custom_field( '_gmie_image_id' );
-	if( empty( $custom_image_id ) )
-		return;
-		
-	$custom_image = wp_get_attachment_image_src( $custom_image_id, apply_filters( 'gmie_image_size', 'full' ) );
-		if ( isset( $custom_image[0] ) && !empty( $custom_image[0] ) ) {
-		echo '<img class="featured-image" src="' . esc_html( $custom_image[0] ) . '" alt="' . get_the_title( $custom_image_id ) . '" />';
+	$custom_image = wp_get_attachment_image_src( $custom_image_id, 'full' );
+		if ( $custom_image ) {
+		echo '<img class="featured-image" src="' . esc_html( $custom_image[0] ) . '" alt="' . esc_html( $image_alt ) . '" />';
 		}
 	}
 }
