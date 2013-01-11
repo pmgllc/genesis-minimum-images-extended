@@ -24,7 +24,7 @@ function gmie_banner_image() {
 	$custom_image_id = genesis_get_custom_field( '_gmie_image_id' );
 	$custom_image = wp_get_attachment_image_src( $custom_image_id, 'full' );
 		if ( $custom_image ) {
-		echo '<img class="featured-image" src="' . esc_html( $custom_image[0] ) . '" alt="' . esc_html( $image_alt ) . '" />';
+		echo '<img id="featured-image" src="' . esc_html( $custom_image[0] ) . '" alt="' . esc_html( $image_alt ) . '" />';
 		}
 	}
 }
