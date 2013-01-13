@@ -2,11 +2,11 @@
 
 /*
   Plugin Name: Genesis Minimum Images Extended
-  Plugin URI: http://www.petersenmediagroup.com
+  Plugin URI: http://www.petersenmediagroup.com/plugins/genesis-minimum-images-extended
   Version: 0.1.0
   Author: Jesse Petersen
   Author URI: http://www.petersenmediagroup.com
-  Description: Adds a custom meta box for setting a seperate image in the mimumum child theme.. Requires Genesis 1.8+
+  Description: Adds a custom meta box for setting a separate banner image in the Mimumum 2.0 child theme.. Requires Genesis 1.8+
   Author: Nick_theGeek
   Author URI: http://DesignsByNicktheGeek.com
  */
