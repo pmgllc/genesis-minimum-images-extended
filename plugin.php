@@ -42,14 +42,14 @@ function gmie_activation_check() {
 
 	if ( basename( TEMPLATEPATH ) != 'genesis' ) {
 		deactivate_plugins( plugin_basename( __FILE__ ) ); // Deactivate ourself
-		wp_die( sprintf( __( 'Sorry, you can\'t activate unless you have installed %1$sGenesis%2$s', 'gmie' ), '<a href="http://designsbynickthegeek.com/go/genesis">', '</a>' ) );
+		wp_die( sprintf( __( 'Sorry, you can\'t activate unless you have installed %1$sGenesis%2$s', 'gmie' ), '<a href="http://www.studiopress.com">', '</a>' ) );
 	}
 
 	$version = wp_html_excerpt( $theme_info['Version'], 3 );
 
 	if ( version_compare( $version, $latest, '<' ) ) {
 		deactivate_plugins( plugin_basename( __FILE__ ) ); // Deactivate ourself
-		wp_die( sprintf( __( 'Sorry, you can\'t activate without %1$sGenesis %2$s%3$s or greater', 'gmie' ), '<a href="http://designsbynickthegeek.com/go/genesis">', $latest, '</a>' ) );
+		wp_die( sprintf( __( 'Sorry, you can\'t activate without %1$sGenesis %2$s%3$s or greater', 'gmie' ), '<a href="http://www.studiopress.com">', $latest, '</a>' ) );
 	}
 }
 
