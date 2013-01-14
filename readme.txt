@@ -21,7 +21,7 @@ Allows for a specialized image for the "header" image above a post or page's con
 == Changelog ==
 
 = 0.1.0 =
-* Inital release.
+* Initial release.
 
 == Upgrade Notice ==
 
