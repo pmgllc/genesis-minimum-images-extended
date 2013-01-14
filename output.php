@@ -25,9 +25,9 @@ function gmie_banner_image() {
 	$custom_image = wp_get_attachment_image_src( $custom_image_id, 'full' );
 	$image_alt = get_post_meta($custom_image_id, '_wp_attachment_image_alt', true);
 		if ( $custom_image ) {
-		echo '<img id="featured-image" src="' . esc_html( $custom_image[0] ).'"';
+		echo '<img id="featured-image" src="' . esc_url( $custom_image[0] ).'"';
 		if ( $image_alt ) { 
-			echo ' alt="' . esc_html( $image_alt ).'"';
+			echo ' alt="' . esc_attr( $image_alt ).'"';
 			}
 		echo ' />';
 		}
