@@ -36,21 +36,21 @@ register_activation_hook( __FILE__, 'gmie_activation_check' );
  */
 function gmie_activation_check() {
 
-	$latest = '1.8';
+	$minimum_version = '1.8';
 
-	$theme_info = get_theme_data( TEMPLATEPATH . '/style.css' );
-
-	if ( basename( TEMPLATEPATH ) != 'genesis' ) {
+  $theme = wp_get_theme('genesis');
+	if( ! $theme->exists() ){
 		deactivate_plugins( plugin_basename( __FILE__ ) ); // Deactivate ourself
 		wp_die( sprintf( __( 'Sorry, you can\'t activate unless you have installed %1$sGenesis%2$s', 'gmie' ), '<a href="http://www.studiopress.com">', '</a>' ) );
+	} else{
+		$version = $theme->Version;
+
+		if ( version_compare( $version, $minimum_version, '<' ) ) {
+			deactivate_plugins( plugin_basename( __FILE__ ) ); // Deactivate ourself
+			wp_die( sprintf( __( 'Sorry, you can\'t activate without %1$sGenesis %2$s%3$s or greater', 'gmie' ), '<a href="http://www.studiopress.com">', $minimum_version, '</a>' ) );
+		}
 	}
 
-	$version = wp_html_excerpt( $theme_info['Version'], 3 );
-
-	if ( version_compare( $version, $latest, '<' ) ) {
-		deactivate_plugins( plugin_basename( __FILE__ ) ); // Deactivate ourself
-		wp_die( sprintf( __( 'Sorry, you can\'t activate without %1$sGenesis %2$s%3$s or greater', 'gmie' ), '<a href="http://www.studiopress.com">', $latest, '</a>' ) );
-	}
 }
 
 
