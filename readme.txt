@@ -22,6 +22,11 @@ This is intended for the child theme Minimum 2.0 for the Genesis framework. We p
 
 == Changelog ==
 
+= 0.1.1 =
+* fixed typos in documentation and readme.txt
+* used appropriate escaping functions in output.php
+* fixed depreciated function for theme check version plugin.php
+
 = 0.1.0 =
 * Initial release.
 
