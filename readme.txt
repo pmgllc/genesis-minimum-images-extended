@@ -3,7 +3,7 @@ Contributors: peterdog, fatmedia, Nick_theGeek, kraftbj
 Tags: genesis, minimum
 Requires at least: 3.3
 Tested up to: 3.5
-Stable tag: 0.1.0
+Stable tag: 0.1.1
 
 Allows for changing the "banner" image in Minimum 2.0 posts to not be the featured image.
 
