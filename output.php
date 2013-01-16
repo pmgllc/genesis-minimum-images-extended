@@ -6,12 +6,17 @@ add_action( 'genesis_meta', 'load_gmie_banner_image' );
 function load_gmie_banner_image() {
 
 	/** Remove default minimum image if it exists */
-	if ( function_exists('minimum_featured_image') ) {
+	if ( $custom_image ) {
 		remove_action( 'genesis_after_header', 'minimum_featured_image' );
+		/** Add the new featured & custom image sections */
+		add_action( 'genesis_after_header', 'gmie_banner_image' );
 	}
-
-	/** Add the new featured & custom image sections */
-	add_action( 'genesis_after_header', 'gmie_banner_image' );
+	
+	/** Make sure page title loads after the banner if it's enabled */
+	if ( function_exists('minimum_page_title') ) {
+		remove_action( 'genesis_after_header', 'minimum_page_title' );
+		add_action( 'genesis_after_header', 'minimum_page_title' );
+	}
 }
 
 /** Include the featured image */
