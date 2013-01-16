@@ -1,4 +1,4 @@
-=== Genesis Minimum Image Extended ===
+=== Genesis Minimum Images Extended ===
 Contributors: peterdog, fatmedia, Nick_theGeek, kraftbj
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TJUUYJPMN6SGQ
 Tags: genesis, minimum
