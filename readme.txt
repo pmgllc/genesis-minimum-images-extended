@@ -5,6 +5,8 @@ Tags: genesis, minimum
 Requires at least: 3.3
 Tested up to: 3.5
 Stable tag: 0.1.2
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Allows for changing the "banner" image in Minimum 2.0 posts to not be the featured image.
 
