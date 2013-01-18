@@ -35,10 +35,11 @@ Let's say you've made a beautiful "banner" image for a post that measures 1600x2
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets 
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png` 
-(or jpg, jpeg, gif).
+1. An example homepage with featured images at "banner" aspect ratios are varying and very hard to see.
+2. Pinterest is unable to use any image other than the post's featured image when you use the Pin It button.
+3. Using GMIE to create a new banner image, you can then have a normal aspect ratio image for the featured image, allowing for attractive social sharing.
+
+See more [examples](http://www.petersenmediagroup.com/plugins/genesis-minimum-images-extended/ "GMIE Plugin URI") here.
 
 == Changelog ==
 
