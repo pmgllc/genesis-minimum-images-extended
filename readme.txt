@@ -43,6 +43,9 @@ See more [examples](http://www.petersenmediagroup.com/plugins/genesis-minimum-im
 
 == Changelog ==
 
+= 0.1.3 =
+* added fallback banner image as the previous featured image until a banner image is added to a post/page, so as to not leave anything bannerless
+
 = 0.1.2 =
 * added FAQ
 * added screenshots
