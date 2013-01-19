@@ -6,7 +6,8 @@ add_action( 'genesis_meta', 'load_gmie_banner_image' );
 function load_gmie_banner_image() {
 
 	/** Remove default minimum image if it exists */
-	if ( function_exists('minimum_featured_image') ) {
+	$custom_image_id = genesis_get_custom_field( '_gmie_image_id' );
+        if ( $custom_image_id ) {
 		remove_action( 'genesis_after_header', 'minimum_featured_image' );
 		
 		/** Add the new featured & custom image sections */
