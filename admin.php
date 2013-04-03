@@ -24,17 +24,17 @@ function gmie_metaboxes( array $meta_boxes ) {
 
 	$meta_boxes[] = array(
 		'id'         => 'gmie_metabox',
-		'title'      => 'Banner Image',
+		'title'      => __( 'Banner Image', 'gmie' ),
 		'pages'      => array( 'page', 'post' ), // Post type
 		'context'    => 'side',
 		'priority'   => 'default',
 		'show_names' => true, // Show field names on the left
 		'fields'     => array(
 				array(
-					'name' => 'Image',
-					'desc' => 'Upload an image or enter a URL.',
-					'id'   => $prefix . 'image',
-					'type' => 'file',
+					'name'    => __( 'Image', 'gmie' ),
+					'desc'    => __( 'Upload an image or enter a URL.', 'gmie' ),
+					'id'      => $prefix . 'image',
+					'type'    => 'file',
 					'save_id' => true,
 					),
 		),

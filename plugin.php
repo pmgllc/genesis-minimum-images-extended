@@ -9,6 +9,8 @@
   Description: Adds a custom meta box for setting a separate banner image in the Mimumum 2.0 child theme.. Requires Genesis 1.8+
   Author: Nick_theGeek
   Author URI: http://DesignsByNicktheGeek.com
+  Text Domain: gmie
+  Domain Path: /languages/
  */
 
 /*
@@ -18,14 +20,13 @@
 
 /* Prevent direct access to the plugin */
 if ( !defined( 'ABSPATH' ) ) {
-		wp_die( __( "Sorry, you are not allowed to access this page directly.", 'gmie' ) );
+		wp_die( __( 'Sorry, you are not allowed to access this page directly.', 'gmie' ) );
 }
 
 define( 'GMIE_PLUGIN_DIR', dirname( __FILE__ ) );
 define( 'GMIE_SETTINGS_FIELD', 'gmie-settings' );
 
 register_activation_hook( __FILE__, 'gmie_activation_check' );
-
 /**
  * Checks for minimum Genesis Theme version before allowing plugin to activate
  *
@@ -35,6 +36,9 @@ register_activation_hook( __FILE__, 'gmie_activation_check' );
  * @version 0.2
  */
 function gmie_activation_check() {
+
+	/** Load textdomain also for the activation hook function */
+	load_plugin_textdomain( 'gmie', false, basename( dirname( __FILE__ ) ) . '/languages' );
 
 	$minimum_version = '1.8';
 
@@ -54,13 +58,22 @@ function gmie_activation_check() {
 }
 
 
+add_action( 'plugins_loaded', 'gmie_load_plugin_translations', 1 );
+/**
+ * Load plugin translations on 'init' hook.
+ */
+function gmie_load_plugin_translations() {
+
+	/** Load textdomain for translation */
+	load_plugin_textdomain( 'gmie', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+
+}
+
+
 add_action( 'genesis_init', 'gmie_init', 15 );
 
 /** Loads required files when needed */
 function gmie_init() {
-
-	/** Load textdomain for translation */
-	load_plugin_textdomain( 'gmie', false, basename( dirname( __FILE__ ) ) . '/languages/' );
 	
 	if ( is_admin () ) {
 		require_once(GMIE_PLUGIN_DIR . '/admin.php');
